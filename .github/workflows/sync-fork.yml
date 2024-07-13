@@ -20,9 +20,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-    - name: Add Upstream Remote
-      run: git remote add upstream https://github.com/imsyy/DailyHot.git
+        git remote add upstream https://github.com/imsyy/DailyHot.git
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
     - name: Fetch Upstream Changes
       run: git fetch upstream
