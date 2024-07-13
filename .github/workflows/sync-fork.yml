@@ -30,7 +30,7 @@ jobs:
     - name: Sync with Upstream
       run: |
         git checkout master  # 请确保这里的分支名称与上面一致
-        git merge upstream/master --no-commit
+        git merge upstream/master --allow-unrelated-histories --no-commit
         git restore --source=HEAD --staged --worktree .github/workflows/sync-fork.yml
         git commit -m 'Sync with upstream'
         git push origin master
